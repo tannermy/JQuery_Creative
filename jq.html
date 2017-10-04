@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>JQ</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+    <script>
+	window.onload = function() {
+        document.getElementById('searchButton').onclick = function() {
+	    var add = document.getElementById('address').value;
+	    var cit = document.getElementById('city').value;
+            var sta = document.getElementById('state').value;
+	    var src = 'https://maps.googleapis.com/maps/api/streetview?size=600x300&location="' + add + ' ' + cit + ' ' + sta + '"heading=111.78&pitch=-8.56&key=AIzaSyAbUIPUNqG9HDPvlsHdA7T8ZwZUMaaw34o'
+	    var img = document.createElement('img');
+	    img.src = src;
+	    document.body.appendChild(img);
+	}
+	}
+    </script>
+
+</head>
+<body>
+    <form>
+        <h1>What address would you like to look at?</h1>
+        <p>Street Address: <input type="text" id="address" value=""><br>
+	City: <input type ="text" id="city" value=""><br>
+	State:
+	<select id = "state">
+	<option value="UT">UT</option>
+	<option value = "AL">AL</option>
+	<option value="AK">AK</option>							<option value="AZ">AZ</option>
+	<option value="AR">AR</option>
+	<option value="CA">CA</option>
+	<option value="CO">CO</option>
+	<option value="CT">CT</option>
+	<option value="DE">DE</option>
+	<option value="FL">FL</option>
+	<option value="GA">GA</option>
+	<option value="HI">HI</option>
+	<option value="ID">ID</option>
+	<option value="IL">IL</option>
+	<option value="IN">IN</option>
+	<option value="IA">IA</option>
+	<option value="KS">KS</option>
+	<option value="KY">KY</option>
+	<option value="LA">LA</option>
+	<option value="ME">ME</option>
+	<option value="MD">MD</option>
+	<option value="MA">MA</option>
+	<option value="MI">MI</option>
+	<option value="MN">MN</option>
+	<option value="MS">MS</option>
+	<option value="MO">MO</option>
+	<option value="MT">MT</option>
+	<option value="NE">NE</option>
+	<option value="NV">NV</option>
+	<option value="NH">NH</option>
+	<option value="NJ">NJ</option>
+	<option value="NM">NM</option>
+	<option value="NY">NY</option>
+	<option value="NC">NC</option>
+	<option value="ND">ND</option>
+	<option value="OH">OH</option>
+	<option value="OK">OK</option>
+	<option value="OR">OR</option>
+	<option value="PA">PA</option>
+	<option value="RI">RI</option>
+	<option value="SC">SC</option>
+	<option value="SD">SD</option>
+	<option value="TN">TN</option>
+	<option value="TX">TX</option>
+	<option value="VT">VT</option>
+	<option value="VA">VA</option>
+	<option value="WA">WA</option>
+	<option value="WV">WV</option>
+	<option value="WI">WI</option>
+	<option value="WY">WY</option>
+
+
+
+
+
+
+
+	</select><br>
+        <input id="searchButton" type="button" value="Submit"></p>
+    </form>
+</body>
+
+<html>
