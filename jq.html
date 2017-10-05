@@ -44,8 +44,8 @@ var myurl = "https://api.wunderground.com/api/0070dcf2ef1cef24/geolookup/conditi
 
 	input_text = "<ul>";
       input_text += "<li>Time: "+time;
-      input_text += "<li>Elevation: "+elevation;
-      input_text += "<li>Visibility: "+visibility;
+      input_text += "<li>Elevation: "+elevation + " ft.";
+      input_text += "<li>Visibility: "+visibility + " miles";
       input_text += "</ul>";
       $("#information").html(input_text);
 }
