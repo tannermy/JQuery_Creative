@@ -3,6 +3,11 @@
 <head>
     <title>JQ</title>
     <link rel="stylesheet" type="text/css" href="main.css">
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
 
     <script>
 	window.onload = function() {
@@ -17,7 +22,37 @@
 	}
 	}
     </script>
+<script>
+$(document).ready(function() {
+$("#searchButton").click(function(e){
+	var city = $("#city").val();
+	var state = $("#state").val();
+  	console.log(city);
+	console.log(state);
+  	e.preventDefault();
+var myurl = "https://api.wunderground.com/api/0070dcf2ef1cef24/geolookup/conditions/q/"
++ state + "/"+ city + ".json";
+	
+  $.ajax({
+    url : myurl,
+    dataType : "json",
+    success : function(parsed_json) {
+      var time = parsed_json['current_observation']['local_time_rfc822'];
+      var elevation = parsed_json['current_observation']['display_location']['elevation'];
+	var visibility = parsed_json['current_observation']['visibility_mi'];
+	var input_text;
 
+	input_text = "<ul>";
+      input_text += "<li>Time: "+time;
+      input_text += "<li>Elevation: "+elevation;
+      input_text += "<li>Visibility: "+visibility;
+      input_text += "</ul>";
+      $("#information").html(input_text);
+}
+});
+});
+});
+</script>
 </head>
 <body>
     <form id="container">
@@ -79,6 +114,7 @@
 	</select><br>
         <input id="searchButton" type="button" value="Submit"></p>
 	<img id="picture" src="">
+	<div id="information"><p>No results</p></div>
     </form>
 </body>
 
