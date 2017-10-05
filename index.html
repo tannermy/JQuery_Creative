@@ -1,1 +1,32 @@
+<html>
+<head>
+<title>City Finder</title>
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
+<script>
+$(document).ready(function() {
+$("#searchButton").click(function(e){
+  e.preventDefault();
+var myurl= "https://maps.googleapis.com/maps/api/streetview?"
+myurl += "size=600x300&"
+myurl += "location='"+$('#addressField').val()
+myurl += "'heading=111.78&"
+myurl += "pitch=-8.56&"
+myurl += "key=AIzaSyAbUIPUNqG9HDPvlsHdA7T8ZwZUMaaw34o";
+  console.log(myurl);
+$("#picture").attr("src",myurl);
+});
+});
 
+</script>
+</head>
+<body>
+<input type="text" id="addressField" value="">
+<input id="searchButton" type="submit" value="Submit">
+<img id="picture" src="">
+<div id="searchResults"><p>Results</p></div>
+</body>
+</html>

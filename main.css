@@ -1,11 +1,25 @@
 body {
-    background-color: ccffcc;
+    background-color: black;
+    margin: auto 20%;
+    border: 2px solid black;
 }
 
 p {
     font-family:Copperplate,"Copperplate Gothic Light",fantasy;
+    line-height: 200%;
 }
 
 h1 {
    font-family:Copperplate,"Copperplate Gothic Light",fantasy; 
+   text-align: center;
+}
+
+#container{
+    background-color: #ccffcc;
+    padding: 35px;
+    height: 100%;
+}
+
+#picture{
+    border: 2px solid black;
 }

@@ -11,16 +11,16 @@
 	    var cit = document.getElementById('city').value;
             var sta = document.getElementById('state').value;
 	    var src = 'https://maps.googleapis.com/maps/api/streetview?size=600x300&location="' + add + ' ' + cit + ' ' + sta + '"heading=111.78&pitch=-8.56&key=AIzaSyAbUIPUNqG9HDPvlsHdA7T8ZwZUMaaw34o'
-	    var img = document.createElement('img');
+	    var img = document.getElementById('picture');
 	    img.src = src;
-	    document.body.appendChild(img);
+	    
 	}
 	}
     </script>
 
 </head>
 <body>
-    <form>
+    <form id="container">
         <h1>What address would you like to look at?</h1>
         <p>Street Address: <input type="text" id="address" value=""><br>
 	City: <input type ="text" id="city" value=""><br>
@@ -78,6 +78,7 @@
 
 	</select><br>
         <input id="searchButton" type="button" value="Submit"></p>
+	<img id="picture" src="">
     </form>
 </body>
 
