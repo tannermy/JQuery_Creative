@@ -10,7 +10,7 @@ p {
 }
 
 h1 {
-   font-family:Copperplate,"Copperplate Gothic Light",fantasy; 
+   font-family:Copperplate,"Copperplate Gothic Light",fantasy;
    text-align: center;
 }
 
@@ -18,6 +18,10 @@ h1 {
     background-color: #ccffcc;
     padding: 35px;
     height: 100%;
+}
+
+#information{
+    font-family:Copperplate,"Copperplate Gothic Light",fantasy;
 }
 
 #picture{

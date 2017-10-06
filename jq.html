@@ -1,7 +1,8 @@
 <html>
 
 <head>
-    <title>JQ</title>
+    <title>Address Viewer</title>
+    <link rel="shortcut icon" type="impage/x-con" href="icon.ico" />
     <link rel="stylesheet" type="text/css" href="main.css">
 <script
   src="http://code.jquery.com/jquery-3.2.1.min.js"
@@ -37,15 +38,16 @@ var myurl = "https://api.wunderground.com/api/0070dcf2ef1cef24/geolookup/conditi
     url : myurl,
     dataType : "json",
     success : function(parsed_json) {
+      
       var time = parsed_json['current_observation']['local_time_rfc822'];
       var elevation = parsed_json['current_observation']['display_location']['elevation'];
-	var visibility = parsed_json['current_observation']['visibility_mi'];
+	var visibility = parsed_json['current_observation']['weather'];
 	var input_text;
 
 	input_text = "<ul>";
+      input_text += "<li>Weather: "+visibility;
       input_text += "<li>Time: "+time;
-      input_text += "<li>Elevation: "+elevation + " ft.";
-      input_text += "<li>Visibility: "+visibility + " miles";
+      input_text += "<li>Elevation: "+elevation+" meters";
       input_text += "</ul>";
       $("#information").html(input_text);
 }
@@ -55,6 +57,7 @@ var myurl = "https://api.wunderground.com/api/0070dcf2ef1cef24/geolookup/conditi
 </script>
 </head>
 <body>
+    <div id = "yelp">Yeye </div>
     <form id="container">
         <h1>What address would you like to look at?</h1>
         <p>Street Address: <input type="text" id="address" value=""><br>
